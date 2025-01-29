@@ -1,0 +1,98 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/mod_extras/extras_screen.rpy", line 10, in execute
+    screen extras():
+  File "game/mod_extras/extras_screen.rpy", line 10, in execute
+    screen extras():
+  File "game/mod_extras/extras_screen.rpy", line 15, in execute
+    use game_menu(_("Extras")):
+  File "game/screens.rpy", line 656, in execute
+    screen game_menu(title, scroll=None):
+  File "game/screens.rpy", line 656, in execute
+    screen game_menu(title, scroll=None):
+  File "game/screens.rpy", line 667, in execute
+    frame:
+  File "game/screens.rpy", line 670, in execute
+    hbox:
+  File "game/screens.rpy", line 676, in execute
+    frame:
+  File "game/screens.rpy", line 679, in execute
+    if scroll == "viewport":
+  File "game/screens.rpy", line 708, in execute
+    transclude
+  File "game/mod_extras/extras_screen.rpy", line 15, in execute
+    use game_menu(_("Extras")):
+  File "game/mod_extras/extras_screen.rpy", line 17, in execute
+    fixed:
+  File "game/mod_extras/extras_screen.rpy", line 19, in execute
+    vpgrid id "ext":
+Exception: VPGrid overfull.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "renpy/ast.py", line 1131, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 1061, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
+  File "renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "renpy/display/core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "renpy/display/core.py", line 3810, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/screen.py", line 451, in visit_all
+    callback(self)
+  File "renpy/display/core.py", line 3810, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/screen.py", line 462, in per_interact
+    self.update()
+  File "renpy/display/screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "game/mod_extras/extras_screen.rpy", line 10, in execute
+    screen extras():
+  File "game/mod_extras/extras_screen.rpy", line 10, in execute
+    screen extras():
+  File "game/mod_extras/extras_screen.rpy", line 15, in execute
+    use game_menu(_("Extras")):
+  File "game/screens.rpy", line 656, in execute
+    screen game_menu(title, scroll=None):
+  File "game/screens.rpy", line 656, in execute
+    screen game_menu(title, scroll=None):
+  File "game/screens.rpy", line 667, in execute
+    frame:
+  File "game/screens.rpy", line 670, in execute
+    hbox:
+  File "game/screens.rpy", line 676, in execute
+    frame:
+  File "game/screens.rpy", line 679, in execute
+    if scroll == "viewport":
+  File "game/screens.rpy", line 708, in execute
+    transclude
+  File "game/mod_extras/extras_screen.rpy", line 15, in execute
+    use game_menu(_("Extras")):
+  File "game/mod_extras/extras_screen.rpy", line 17, in execute
+    fixed:
+  File "game/mod_extras/extras_screen.rpy", line 19, in execute
+    vpgrid id "ext":
+  File "renpy/display/viewport.py", line 647, in add
+    raise Exception("VPGrid overfull.")
+Exception: VPGrid overfull.
+
+Windows-10-10.0.19041 AMD64
+Ren'Py 7.5.3.22090809
+Doki Doki LifeTimes Alpha 0.1-FullRW
+Wed Jan 29 00:23:54 2025

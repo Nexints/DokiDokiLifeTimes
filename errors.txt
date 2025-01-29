@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/definitions/definitions.rpy", line 1473: unexpected EOF while parsing
+    persistent.
+               ^
+
+Ren'Py Version: Ren'Py 7.5.3.22090809
+Mon Mar 18 22:50:11 2024
