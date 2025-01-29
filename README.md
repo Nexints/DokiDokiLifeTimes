@@ -23,8 +23,8 @@ This mod takes place in a pre-DDLC, post-libitina simulation, where each of the 
 **Quirks:**
 
 - Tragic routes are possible, where some of the dokis die. All tragic routes are avoidable in this mod though, and there are good endings for each Doki!
-- Adding onto this: If a doki dies, the lifetime continues without them. The clear exceptions are humorous routes (like the American ending).
-- Marrying one of the dokis (and more!) is possible in the final release of this mod. However, this will not happen for a while.
+- Adding onto this: If a doki dies, the lifetime continues without them.
+- Marrying one of the dokis (and more!) is possible in the final release of this mod.
 - Dating all the dokis at once is impossible with this mod. Sayori is canonically monogamous in the official game.
 - Other perspectives may be added in eventually!
 
