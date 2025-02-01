@@ -61,10 +61,51 @@ label start:
     # This is where your script code is called!
     # 'persistent.playthrough' controls the playthrough number the player is on i.e (Act 1, 2, 3, 4)
 
-    # Calls the prologue. This is act 0.
-    call prologue from _call_prologue
-    $ s_name = "???"
-    call end from _call_end
+    # Reset playthrough
+    $ persistent.playthrough = 0
+
+    # First playthrough intro!
+    if persistent.firstRun == 0:
+        $ persistent.firstRun == 1
+        call intro_act0 from _call_intro_act0
+    # Option to skip the intro.
+    else:
+        menu:
+            "Do you wish to see the Act 0 intro?"
+            "Yes":
+                call intro_act0 from _call_intro_act0
+            "No":
+                "Skipping intro..."
+                call skippedIntro_act0 from _call_skippedIntro_act0
+    
+    # Determines which act to call, Game needs to restart each act.
+    # When all acts are released, this will be redundant.
+    if persistent.act == 0:
+        # Prologue (Act 0)
+        call prologue from _call_prologue
+        $ persistent.act = 1
+    else:
+        menu:
+            "Do you wish to go back to Act 0?"
+            "Yes":
+                $ persistent.act = 0
+                "Setting act to 0."
+                menu:
+                    "Do you wish to see the intro?"
+                    "Yes":
+                        call intro_act0 from _call_intro_act0
+                    "No":
+                        "Skipping intro..."
+                        call skippedIntro_act0 from _call_skippedIntro_act0
+                call prologue from _call_prologue
+                $ persistent.act = 1
+            "No":
+                "There's nothing for you here."
+                "This is all the content inside the mod currently."
+
+    
+    # End Demo
+    call end_demo from _call_end_demo
 
     ## Example on calling scripts from DDLC.
     # if persistent.playthrough == 0:

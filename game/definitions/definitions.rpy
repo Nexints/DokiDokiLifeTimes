@@ -1704,15 +1704,36 @@ default chapter = 0
 default currentpos = 0
 default faint_effect = None
 
-# DDLT Second Revision variables. Not used.
+# DDLT Second Rewrite variables. Not used in the third rewrite.
 default persistent.wallace_gone = 0
 default persistent.sayori_dead = 0
 default persistent.america = 0
 default persistent.sayori_relation = 0
 default persistent.lsayo = 0
 
-# DDLT Third Revision Variables. Actually used in the game.
-default persistent.route = 0
+# DDLT Third Rewrite Variables.
+
+# Player-specific variables
+default persistent.route = 0 # Determines the route.
+default persistent.str = 0 # Determines your strength.
+default persistent.intel = 0 # Determines intelligence
+default persistent.gameSkill = 0 # Determines gamer skill
+default persistent.tardy = 0 # Tardiness in class. Decreased by doing homework.
+
+# Temp variables
+default actions = 5 # Determines how many actions you can do
+default homework = 0 # Flag if homework is done in class
+
+# Game variables
+default persistent.firstRun = 0 # Determines if the game has been started before. 0 = No, 1 = Yes.
+default persistent.act = 0 # Indicates the act.
+
+# Non-Persistent versions of the above variables. Used in acts.
+default route = 0
+default strength = 0
+default intel = 0
+default gameSkill = 0
+default tardy = 0
 
 # Name variables.
 # FeMC, Sayori, Monika, myself, and others are insided here.
