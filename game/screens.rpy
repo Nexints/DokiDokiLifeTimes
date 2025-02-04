@@ -843,11 +843,11 @@ screen modInfo():
 
             vbox:
                 label "[config.name!t]" xalign .5
-                text _("Version [config.version!t]\n") xalign .5
+                text _("[config.version!t]\n") xalign .5
                 text _("\nThis mod aims to lengthen DDLC and give free choice towards the player.")
                 text _("Marry the Dokis, friendzone them all, and escape the simulation - The choice is yours!\n")
                 
-                text "This is the second rewrite of DDLT, act 0."
+                text "Note: This is the second rewrite of DDLT. Not affiliated or associated with DDLC."
                 text _("Mod made by Nexint. 2025.")
 
 

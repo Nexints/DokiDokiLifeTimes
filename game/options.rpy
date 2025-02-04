@@ -14,7 +14,7 @@ define config.name = "Doki Doki LifeTimes Act 0"
 define gui.show_name = True
 
 # This controls the version number of your mod.
-define config.version = "0.1"
+define config.version = "Day.1"
 
 # This adds information about your mod in the About screen.
 # DDLC does not have a 'About' screen so you can leave this blank.
@@ -82,7 +82,7 @@ default preferences.sfx_volume = 0.75
 #   Windows: %AppData%/RenPy/
 #   macOS: $HOME/Library/RenPy/ (Un-hide the Library Folder)
 #   Linux: $HOME/.renpy/
-define config.save_directory = "DDLTAct0"
+define config.save_directory = "DDLTDemo"
 
 # This controls the window logo of your mod.
 define config.window_icon = "mod_assets/DDLCModTemplateLogo.png"

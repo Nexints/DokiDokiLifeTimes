@@ -499,7 +499,7 @@ label day1NoWalk:
     "Maybe I'll hang out with her later on."
     "Honestly, there's a lot I want to do at home, but there's also a lot of things to do outside."
     $ actions = 5
-    call day1ResetScene from _call_day1ResetScene
+    call day1ResetScene
     return
 
 label day1ResetScene:
@@ -515,7 +515,7 @@ label day1ResetScene:
         scene street
         with wipeleft
     play music t4 # Placeholder for actual music.
-    call day1WhatToDo from _call_day1WhatToDo
+    call day1WhatToDo
     return
 
 label day1WhatToDo:
@@ -524,12 +524,12 @@ label day1WhatToDo:
     menu:
         "What should I do? ([actions] actions left.)"
         "Go back home":
-            call day1WalkEnd from _call_day1WalkEnd_1
+            call day1WalkEnd
         "Work out (Jog)" if actions > 3:
-            call day1WorkOut from _call_day1WorkOut
+            call day1WorkOut
         "Read at the Library (Locked)" if actions > 3:
             "This option is currently locked today."
-            call day1WhatToDo from _call_day1WhatToDo_1
+            call day1WhatToDo
     return
 
 label day1WorkOut:
@@ -552,7 +552,7 @@ label day1WorkOut:
     else:
         scene street
         with wipeleft
-    call day1WhatToDo from _call_day1WhatToDo_2
+    call day1WhatToDo
     return
 
 
@@ -585,17 +585,17 @@ label day1gaming:
         menu:
             "What should I do at home? ([actions] actions left.)"
             "Read a book":
-                call day1Read from _call_day1Read
+                call day1Read
             "Do my homework" if homework == 0:
-                call day1Homework from _call_day1Homework
+                call day1Homework
             "Play IdleCraft Simulator":
-                call day1IdleCraft from _call_day1IdleCraft
+                call day1IdleCraft
             "Watch TerraAnime":
-                call day1TerraAnime from _call_day1TerraAnime
+                call day1TerraAnime
             "Sleep":
-                call day1Sleep from _call_day1Sleep
+                call day1Sleep
     else:
-        call day1Sleep from _call_day1Sleep_1
+        call day1Sleep
     return
 
 label day1Read:
@@ -610,7 +610,7 @@ label day1Read:
     "This book was quite entertaining to read!"
     "I should read another book from my bookshelf sometime."
     "I can feel myself getting smarter by the second."
-    call day1gaming from _call_day1gaming_1
+    call day1gaming
     return
 
 label day1Homework:
@@ -625,7 +625,7 @@ label day1Homework:
     hide screen console_screen
     "My homework wasn't very interesting to be honest."
     "At least it's over with."
-    call day1gaming from _call_day1gaming_2
+    call day1gaming
     return
 
 label day1IdleCraft:
@@ -638,7 +638,7 @@ label day1IdleCraft:
     hide screen console_screen
     "I'm not that great right now at gaming."
     "I can feel myself getting better though..."
-    call day1gaming from _call_day1gaming_3
+    call day1gaming
     return
 
 label day1TerraAnime:
@@ -650,7 +650,7 @@ label day1TerraAnime:
     hide screen console_screen
     "I feel absolutely nothing different about me."
     "Honestly, I'm not sure what I'm doing with my life."
-    call day1gaming from _call_day1gaming_4
+    call day1gaming
     return
 
 label day1Sleep:
