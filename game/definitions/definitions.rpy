@@ -175,6 +175,9 @@ define audio.closet_close = "sfx/closet-close.ogg"
 define audio.page_turn = "sfx/pageflip.ogg"
 define audio.fall = "sfx/fall.ogg"
 
+# DDLT sound effects!
+define audio.sfxBell = "mod_assets/sfx/school_bell_loud.flac" # Bell SFX! Modified from the original, the original is still there.
+
 ## Backgrounds
 # This section declares the backgrounds available to be shown in the mod.
 # To define a new color background, declare a new image statement like in this example:
@@ -2316,6 +2319,8 @@ image monika 6zd = im.Composite((960, 960), (0, 0), "mod_assets/monika/4l.png", 
 image monika 6ze = im.Composite((960, 960), (0, 0), "mod_assets/monika/4l.png", (0, 0), "mod_assets/monika/4r.png", (0, 0), "mod_assets/monika/ze.png")         #HEAD CREDIT: u/NormallyAverage
 ########################################
 
+# Wallace Sprites (Used as the teacher)
+
 image wallace 1ba = im.Composite((960, 960), (0, 0), "mod_assets/wallace/1bl.png", (0, 0), "mod_assets/wallace/1br.png", (0, 0), "mod_assets/wallace/a.png")
 image wallace 1bb = im.Composite((960, 960), (0, 0), "mod_assets/wallace/1bl.png", (0, 0), "mod_assets/wallace/1br.png", (0, 0), "mod_assets/wallace/b.png")
 image wallace 1bc = im.Composite((960, 960), (0, 0), "mod_assets/wallace/1bl.png", (0, 0), "mod_assets/wallace/1br.png", (0, 0), "mod_assets/wallace/c.png")
@@ -2351,6 +2356,8 @@ image wallace 2bo = im.Composite((960, 960), (0, 0), "mod_assets/wallace/2bl.png
 image wallace 2bp = im.Composite((960, 960), (0, 0), "mod_assets/wallace/2bl.png", (0, 0), "mod_assets/wallace/2br.png", (0, 0), "mod_assets/wallace/p.png")
 
 image femc 1k = im.Composite((960, 960), (0, 0), "mod_assets/blonde_femc/1l.png", (0, 0), "mod_assets/blonde_femc/1r.png", (0, 0), "mod_assets/blonde_femc/k.png")
+
+# Main Character Sprites
 
 image mainchar 1a = im.Composite((960, 960), (0, 0), "mod_assets/player/1l.png", (0, 0), "mod_assets/player/1r.png", (0, 0), "mod_assets/player/a.png")
 image mainchar 1b = im.Composite((960, 960), (0, 0), "mod_assets/player/1l.png", (0, 0), "mod_assets/player/1r.png", (0, 0), "mod_assets/player/b.png")

@@ -3,120 +3,26 @@
 While running game code:
   File "game/script.rpy", line 100, in script call
     call prologue from _call_prologue
-  File "game/Prologue.rpy", line 191, in script call
-    call day1NoWalk from _call_day1NoWalk
-  File "game/Prologue.rpy", line 360, in script call
-    call day1ResetScene
-  File "game/Prologue.rpy", line 376, in script call
-    call day1WhatToDo
-  File "game/Prologue.rpy", line 387, in script call
-    call day1WorkOut
-  File "game/Prologue.rpy", line 409, in script call
-    call day1WhatToDo
-  File "game/Prologue.rpy", line 387, in script call
-    call day1WorkOut
-  File "game/Prologue.rpy", line 409, in script call
-    call day1WhatToDo
-  File "game/Prologue.rpy", line 385, in script call
-    call day1WalkEnd
-  File "game/Prologue.rpy", line 419, in script call
-    call day1gaming from _call_day1gaming
-  File "game/Prologue.rpy", line 444, in script call
-    call day1Homework
-  File "game/Prologue.rpy", line 480, in script call
-    call day1gaming
-  File "game/Prologue.rpy", line 448, in script call
-    call day1TerraAnime
-  File "game/script.rpy", line 100, in script call
-    call prologue from _call_prologue
-  File "game/Prologue.rpy", line 191, in script call
-    call day1NoWalk from _call_day1NoWalk
-  File "game/Prologue.rpy", line 360, in script call
-    call day1ResetScene
-  File "game/Prologue.rpy", line 376, in script call
-    call day1WhatToDo
-  File "game/Prologue.rpy", line 387, in script call
-    call day1WorkOut
-  File "game/Prologue.rpy", line 409, in script call
-    call day1WhatToDo
-  File "game/Prologue.rpy", line 387, in script call
-    call day1WorkOut
-  File "game/Prologue.rpy", line 409, in script call
-    call day1WhatToDo
-  File "game/Prologue.rpy", line 385, in script call
-    call day1WalkEnd
-  File "game/Prologue.rpy", line 419, in script call
-    call day1gaming from _call_day1gaming
-  File "game/Prologue.rpy", line 444, in script call
-    call day1Homework
-  File "game/Prologue.rpy", line 480, in script call
-    call day1gaming
-  File "game/Prologue.rpy", line 448, in script call
-    call day1TerraAnime
-ScriptError: could not find label 'day1TerraAnime'.
+  File "game/Prologue.rpy", line 35, in script
+    show sayori turned happ afm at 11
+TypeError: 'int' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/script.rpy", line 100, in script call
     call prologue from _call_prologue
-  File "game/Prologue.rpy", line 191, in script call
-    call day1NoWalk from _call_day1NoWalk
-  File "game/Prologue.rpy", line 360, in script call
-    call day1ResetScene
-  File "game/Prologue.rpy", line 376, in script call
-    call day1WhatToDo
-  File "game/Prologue.rpy", line 387, in script call
-    call day1WorkOut
-  File "game/Prologue.rpy", line 409, in script call
-    call day1WhatToDo
-  File "game/Prologue.rpy", line 387, in script call
-    call day1WorkOut
-  File "game/Prologue.rpy", line 409, in script call
-    call day1WhatToDo
-  File "game/Prologue.rpy", line 385, in script call
-    call day1WalkEnd
-  File "game/Prologue.rpy", line 419, in script call
-    call day1gaming from _call_day1gaming
-  File "game/Prologue.rpy", line 444, in script call
-    call day1Homework
-  File "game/Prologue.rpy", line 480, in script call
-    call day1gaming
-  File "game/Prologue.rpy", line 448, in script call
-    call day1TerraAnime
-  File "renpy/ast.py", line 1705, in execute
-    rv = renpy.game.context().call(label, return_site=self.next.name)
-  File "game/script.rpy", line 100, in script call
-    call prologue from _call_prologue
-  File "game/Prologue.rpy", line 191, in script call
-    call day1NoWalk from _call_day1NoWalk
-  File "game/Prologue.rpy", line 360, in script call
-    call day1ResetScene
-  File "game/Prologue.rpy", line 376, in script call
-    call day1WhatToDo
-  File "game/Prologue.rpy", line 387, in script call
-    call day1WorkOut
-  File "game/Prologue.rpy", line 409, in script call
-    call day1WhatToDo
-  File "game/Prologue.rpy", line 387, in script call
-    call day1WorkOut
-  File "game/Prologue.rpy", line 409, in script call
-    call day1WhatToDo
-  File "game/Prologue.rpy", line 385, in script call
-    call day1WalkEnd
-  File "game/Prologue.rpy", line 419, in script call
-    call day1gaming from _call_day1gaming
-  File "game/Prologue.rpy", line 444, in script call
-    call day1Homework
-  File "game/Prologue.rpy", line 480, in script call
-    call day1gaming
-  File "game/Prologue.rpy", line 448, in script call
-    call day1TerraAnime
-  File "renpy/script.py", line 927, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'day1TerraAnime'.
+  File "game/Prologue.rpy", line 35, in script
+    show sayori turned happ afm at 11
+  File "renpy/ast.py", line 1408, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "renpy/ast.py", line 1378, in show_imspec
+    atl=atl)
+  File "renpy/exports.py", line 698, in show
+    img = i(img)
+TypeError: 'int' object is not callable
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 7.5.3.22090809
 Doki Doki LifeTimes Act 0 0.1
-Sat Feb  1 02:29:10 2025
+Sat Feb  1 13:25:51 2025

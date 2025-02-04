@@ -26,16 +26,24 @@ label prologue:
     with wipeleft
     $ s_name = "Sayori"
     s "Heeeeeeeyyy!!"
-    "That girl over there is Sayori, my close childhood friend from years in the past."
-    "We're close friends, and since we go to the same school, we both walk to school with each other."
+    "That girl over there is Sayori, my close childhood friend who I've known for many years."
+    "Since we go to the same school, we both generally walk to school together."
     "Honestly, it's slightly tiring having to deal with Sayori all the time."
     "We're so close that people sometimes call us lovers, but it's not like that."
     "But hey, it's better than not having anyone to talk to."
+    $ sref()
+    $ mpt_af_mouth_auto = True
+    $ af_enabled = True
+    show sayori base afm happ om at f11
     s "Come on, let's get to school!~"
+    show sayori cm at t11
     mc "Fine, but I just wanna play video games."
     mc "Besides, why do you hang around me so often?"
+    show sayori om lup rup at hf11
     s "Because you're fun to be around!"
+    show sayori cm ldown rdown at t11
     mc "Whatever you want. Let's just go to school."
+    show sayori om ce at t11
     s "Sure! Ehe~"
     
     # MC talking about highschools with Sayori.
@@ -44,17 +52,25 @@ label prologue:
     scene street
     with wipeleft
     "We make our way to our school."
-    "The streets are filled with people."
+    "The streets are filled with people commuting to work or just walking around."
+    show sayori 1b zorder 2 at f11
     s "By the way,"
     s "Are you interested in any highschools?"
+    show sayori at t11
     mc "As I have said already, I just wanna play video games. It's not that deep."
+    show sayori 1h zorder 2 at h11
     s "You've gotta go to highschool!"
     s "I mean, it's our last year here..."
+    show sayori at t11
     mc "That's true, but I'm just not interested."
+    show sayori 2g zorder 2 at s11
     s "You promised though!"
+    show sayori 2l zorder 2 at f11
     s "I want to go to the same highschool as you!"
     s "Besides, I genuinely care about you."
+    show sayori at t11
     mc "Fine, I'll see what I can do. No promises though."
+    show sayori 2r zorder 2 at hf11
     s "Yay!~"
     "Sayori's skipping along on the sidewalk, unable to contain her excitement."
     "She's a strange one, but I like her for that."
@@ -67,32 +83,53 @@ label prologue:
     scene bg class_day
     with wipeleft
     play music t5
+    play sound sfxBell
     "I'm finally here."
     "School is honestly such a drag."
     "If it wasn't for the insane amount of work they gave us, I would have been fine with it."
-    "But I just want to go home and play games. Especially when my first period is Math."
+    "But I just want to go home and play games, especially when my first period is Math."
     $ w_name = "Teacher"
-    w "Hello."
+    show wallace 1bb at f11
+    w "Hello, everyone."
     $ w_name = "Wallace"
     w "I'm Wallace, and I will be your teacher for the next year."
     w "I hope that we will have a great class together."
+    show wallace 1ba at t11
     "That's your standard teacher introduction."
-    "I'm already uninterested in this class, and the teacher had to make it worse."
-    "At least I'm seated next to Sayori, so the class is a lot more bearable than I thought."
+    "I'm honestly just going to tune out for the rest of class."
+    show wallace at thide
+    hide wallace
+    "At least I know some friends here, so this class is a lot more bearable than I thought."
     "As class progresses, Sayori whispers into my ear."
+    $ sref()
+    show sayori base afm curi om at f11
     s "Psst..."
     s "Wanna get lunch later?"
+    show sayori cm at t11
     mc "Sure."
+    show sayori lsur om at f11
     s "Pleasee- Wait, you said yes?"
-    mc "Yeah, I have nothing to do in school anyways."
+    show sayori cm at t11
+    mc "I'll most likely be alone anyways, so why not."
+    show sayori happy om at f11
     s "Yay!~"
+    show sayori flustered lup rup cm at t21
+    show wallace 1bj at f22
     w "Sayori and [player], be quiet."
     w "Students are actually trying to learn, and you are disrupting class."
+    show wallace 1bp at t22
+    $ sref()
+    show sayori tap nerv om oe uniform afm at s21
     s "Alright..."
+    show sayori cm at t21
     mc "Fine."
+    show sayori at thide
+    show wallace at thide
+    hide wallace
+    hide sayori
     "I typically don't go to lunch with Sayori, but this time I decided to go."
     "Sayori's always asking me to go, and I always end up going with her since I don't talk to anyone else."
-    "Honestly though, I kind of wish she didn't ask me so often."
+    "Honestly though, I kind of enjoy hanging out with her. It's refreshing every once in a while."
 
     # Transition to lunch time with Sayori.
     scene black
@@ -101,18 +138,34 @@ label prologue:
     scene bg class_day
     with wipeleft
     play music t2
+    play sound sfxBell
     "Bell" "RIING!"
     "It's finally lunchtime, and I had to sit through 3 other boring classes."
-    "School is honestly such a drag."
+    "I'd rather not be here, but my parents wanted me to go to school."
+    $ sref()
+    show sayori base afm happy oe om at f11
     s "Come on, [player]! Let's go~"
+    show sayori cm at t11
     mc "Sure, whatever. Where are we eating?"
+    show sayori ce om at f11
     s "The rooftop!"
+    show sayori cm at t11
     mc "Hold on, isn't the rooftop off limits?"
-    s "I got permission from the principal! Let's go~"
+    $ sref()
+    show sayori tap nerv om oe uniform afm at f11
+    s "Ehe...~"
+    $ sref()
+    show sayori base afm happy oe mo at f11
+    s "I got permission from the principal!"
+    show sayori ce at f11
+    s "Let's go~"
+    show sayori at thide
+    hide sayori
     mc "Wait, how did you-"
     mc "Alright, I guess."
-    "Well, I don't really have a choice."
-    "Once she's set on something, it's really hard to convince her."
+    "I wonder how Sayori got permission on the first day of school."
+    "Oh well, at least we can go to the rooftop."
+    "I've been eyeing that spot ever since we came to school."
 
     # Lunch time with Sayori.
     scene black
@@ -142,7 +195,7 @@ label prologue:
     mc "Yeah, I cooked it."
     mc "That's not important though."
     s "Thank you so much!"
-    s "I... might've forgotten to bringg my lunch..."
+    s "I... might've forgotten to bring my lunch..."
     s "Ehe~"
     mc "So that's why you wanted my lunch."
     mc "Don't forget your lunch next time. Please."
@@ -158,6 +211,7 @@ label prologue:
     with wipeleft
     scene roof
     with wipeleft
+    play sound sfxBell
     "Bell" "RIING"
     "That signifies the end of lunch, and the start of another 4 periods of pain."
     mc "We should head back now."
@@ -174,6 +228,7 @@ label prologue:
     scene bg class_day
     with wipeleft
     play music t5
+    play sound sfxBell
     "Classes are as boring as ever, and it's time to leave school."
     "Honestly, I'm just so tired from school that I just want to sleep."
     "But I'm suddenly jolted awake by a blue-eyed girl named Sayori."

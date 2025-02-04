@@ -61,4 +61,8 @@ Credit goes to BlueGodXD for the blond FeMC design!
 Credit to elckarow (formerly Elckarow#8399) for the "Better EM:R Phone" project used in this mod!
 Found here: https://github.com/Elckarow/Better-EMR-Phone
 
-DDLT POV swaps taken from Lost Ascension POV swaps. May replace at a later point.
+Credit to OG_Doom for the bell sound effect!
+Found at https://www.zedge.net/ringtones/7c2c91f0-6def-4830-a5ba-e944897799da
+
+DDLT POV swaps taken from DDLC: Lost Ascension POV swaps.
+Open-world game aspect taken from DDLC: SNAFU.
