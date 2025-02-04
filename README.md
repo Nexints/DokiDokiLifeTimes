@@ -43,4 +43,4 @@ This mod takes place in a pre-DDLC, post-libitina simulation, where each of the 
 
 # Credits (Additional credits in credits.txt)
 - This mod was made possible with GanstaKingofSA's Doki Doki Mod Maker.
-- Ideas bounced from DDLC, other manga / anime series, other DDLC mods, and more.
+- Ideas bounced from DDLC, other manga / anime series, other DDLC mods, and more. Notable examples: DDLC: SNAFU, DDLA, and more.
