@@ -1,7 +1,8 @@
 # Doki Doki LifeTimes
 
 This serves as the official Github repo for Doki Doki LifeTimes, an upcoming DDLC mod worked on by Nexint. We're still in our early stages, so issues will be present in the mod and characters may not act like themselves. Feedback is appreciated on this actively developing mod!
-Join the DDLT Discord for sneek peeks, activity history, and more! https://discord.gg/QCSrZvTzA7
+
+Join the DDLT Discord for sneek peeks, activity history, and more. https://discord.gg/QCSrZvTzA7
 
 # Disclaimer
 - **This is the SECOND rewrite of DDLT.**
@@ -43,4 +44,4 @@ This mod takes place in a pre-DDLC, post-libitina simulation, where each of the 
 
 # Credits (Additional credits in credits.txt)
 - This mod was made possible with GanstaKingofSA's Doki Doki Mod Maker.
-- Ideas bounced from DDLC, other manga / anime series, other DDLC mods, and more.
+- Ideas bounced from DDLC, other manga / anime series, other DDLC mods, and more. Notable examples: DDLC: SNAFU, DDLA, and more.
