@@ -1,5 +1,19 @@
 DDLT Patch Notes:
 
+0.1: (Act 0, Day 1)
+- Rewrote the entire mod!
+- Finished Day 1
+- Added another menu for mod info.
+- Added the MPT to make development easier.
+- Freedom of choice added, stats added, and routes added.
+- Sound effect added (school_bell_loud and school_bell)
+- Framework established for future acts.
+Additional notes:
+- Better EMR phone still does not work. This will not be added till later.
+- DDLT music soon? (Act 1 and beyond)
+
+OLD REVISIONS:
+
 0.2.0 + 0.2.1 Patch notes:
 - Included patch notes inside the game package
 - Rewrote the beginning, changed the beginning player name to the current username, most of Sayori's route, other segments of this mod, and removed the confession. (Confession will come back later, but not at the next update.)
@@ -35,7 +49,7 @@ Additional Notes:
 0.1.0:
 - Public release!
 
-OLD REVISIONS:
+OLDER REVISIONS:
 
 0.4.1:
 - Added more lore!

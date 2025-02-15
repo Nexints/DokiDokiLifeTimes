@@ -2,6 +2,14 @@
 label prologue:
     stop music fadeout 0.5
 
+    # Defining variables for Act 0.
+    $ route = 0
+    $ strength = 0
+    $ intel = 0
+    $ gameSkill = 0
+    $ tardy = 0
+    $ story_mode = False
+
     # MC in his bedroom.
     scene mcpov
     $ pause(0.01)

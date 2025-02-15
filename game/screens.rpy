@@ -1254,14 +1254,14 @@ screen extra_options():
         hbox:
             textbutton _("Uncensored Mode") action If(persistent.uncensored_mode, 
                 ToggleField(persistent, "uncensored_mode"), 
-                Show("confirm", message="Are you sure you want to turn on Uncensored Mode?\nDoing so will enable more adult/sensitive\ncontent in your playthrough.\n\nThis setting will be dependent on the modder if\nthey programmed these checks in their story.", 
+                Show("confirm", message="Are you sure you want to turn on Uncensored Mode?\nDoing so will enable more adult/sensitive\ncontent in your playthrough.\n\nAt the moment, this setting does not do anything.", 
                     yes_action=[Hide("confirm"), ToggleField(persistent, "uncensored_mode")],
                     no_action=Hide("confirm")
                 ))
             textbutton _("Let's Play Mode") action If(persistent.lets_play, 
                 ToggleField(persistent, "lets_play"),
                 [ToggleField(persistent, "lets_play"), Show("dialog", 
-                    message="You have enabled Let's Play Mode.\nThis mode allows you to skip content that\ncontains sensitive information or apply alternative\nstory options.\n\nThis setting will be dependent on the modder\nif they programmed these checks in their story.", 
+                    message="Let's play mode has been enabled.\nNote that Let's Play mode does not currently do anything at the moment.", 
                     ok_action=Hide("dialog")
                 )])
         
@@ -1273,6 +1273,51 @@ screen extra_options():
             else:
                 text "Current Name: [player]" style "viewframe_text"
             textbutton "Change Name" action Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName, launchGame=False)) xoffset 10
+        
+        
+        
+        null height 10
+
+        hbox:
+            xalign 0.5
+            spacing 100
+
+            textbutton _("OK") action Hide() style "confirm_button"
+
+screen ddlt_options():
+    style_prefix "viewframe"
+
+    modal True
+
+    zorder 150
+
+    use viewframe_options(_("DDLT Settings")):
+        style_prefix "radio"
+        
+        label _("Music")
+        hbox:
+            textbutton _("Custom Menu Music") action If(persistent.customMusic, 
+                [ToggleField(persistent, "customMusic"), Show("dialog", 
+                    message="You have disabled custom music. This will require a restart of DDLT.", 
+                    ok_action=Hide("dialog")
+                )],
+                [ToggleField(persistent, "customMusic"), Show("dialog", 
+                    message="You have enabled occasional custom music. This will require a restart of DDLT.", 
+                    ok_action=Hide("dialog")
+                )])
+        
+        label _("Game")
+        hbox:
+            textbutton _("Story mode") action If(persistent.story_mode, 
+                [ToggleField(persistent, "story_mode"), Show("dialog", 
+                    message="You have disabled story mode.", 
+                    ok_action=Hide("dialog")
+                )],
+                [ToggleField(persistent, "story_mode"), Show("dialog", 
+                    message="You have enabled story mode. All choices will be auto-completed for you.", 
+                    ok_action=Hide("dialog")
+                )])
+        
         
         null height 10
 
@@ -1323,6 +1368,7 @@ screen preferences():
                         hbox:
                             textbutton _("Text") action Show("text_options")
                             textbutton _("Audio") action Show("audio_options")
+                            textbutton _("DDLT") action Show("ddlt_options")
                             textbutton _("Extras") action Show("extra_options")
 
                 if enable_languages and translations:

@@ -178,6 +178,11 @@ define audio.fall = "sfx/fall.ogg"
 # DDLT sound effects!
 define audio.sfxBell = "mod_assets/sfx/school_bell_loud.flac" # Bell SFX! Modified from the original, the original is still there.
 
+# DDLT Music! Courtesy of Nexint (the mod creator)
+# This is disabled by default.
+define persistent.customMusic = False
+define audio.menumusic = "<loop 7.385>mod_assets/music/DigiFlies.mp3" # Menu music! "Digiflies" by Nexint.
+
 ## Backgrounds
 # This section declares the backgrounds available to be shown in the mod.
 # To define a new color background, declare a new image statement like in this example:
@@ -1722,6 +1727,7 @@ default persistent.str = 0 # Determines your strength.
 default persistent.intel = 0 # Determines intelligence
 default persistent.gameSkill = 0 # Determines gamer skill
 default persistent.tardy = 0 # Tardiness in class. Decreased by doing homework.
+default persistent.story_mode = False # Story mode - Skips opptions if enabled, and unlocks a different timeline.
 
 # Temp variables
 default actions = 5 # Determines how many actions you can do
@@ -1731,12 +1737,13 @@ default homework = 0 # Flag if homework is done in class
 default persistent.firstRun = 0 # Determines if the game has been started before. 0 = No, 1 = Yes.
 default persistent.act = 0 # Indicates the act.
 
-# Non-Persistent versions of the above variables. Used in acts.
+# Non-Persistent versions of the above variables. Used during acts.
 default route = 0
 default strength = 0
 default intel = 0
 default gameSkill = 0
 default tardy = 0
+default story_mode = 0
 
 # Name variables.
 # FeMC, Sayori, Monika, myself, and others are insided here.
