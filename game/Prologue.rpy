@@ -2,13 +2,7 @@
 label prologue:
     stop music fadeout 0.5
 
-    # Defining variables for Act 0.
-    $ route = 0
-    $ strength = 0
-    $ intel = 0
-    $ gameSkill = 0
-    $ tardy = 0
-    $ story_mode = False
+    $ syncGlobalToAct()
 
     # MC in his bedroom.
     scene mcpov
@@ -183,7 +177,7 @@ label prologue:
     with wipeleft
     play music t8
     "I packed a lot of lunch today - almost too much."
-    "My mom was insistent... She wanteed me to cook and bring a lot on the first day."
+    "My mom was insistent... She wanted me to cook and bring a lot on the first day."
     "\"You'll never know when you need it!\""
     "Honestly, I didn't want to bring a big lunch today."
     "But it might have been worth it."
@@ -271,31 +265,38 @@ label prologue:
     show sayori at thide
     hide sayori
     "To be honest, I don't really want to walk home with Sayori."
+    "I'm slightly busy, as I have things to do outside of school."
 
     # Option menu - Do you want to walk home with Sayori, or ignore her?
-    menu:
-        "Should I walk home with Sayori?"
-        "You should":
-            call day1Walk from _call_day1Walk
-        "You shouldn't":
-            call day1NoWalk from _call_day1NoWalk
-    return
+    if story_mode == True:
+        "But might as well go with Sayori this time."
+        "She'll probably like it."
+        call day1Walk
+    else:
+        menu:
+            "Should I walk home with Sayori?"
+            "You should":
+                "Well, there's nothing bad that can come from walking with Sayori, I guess."
+                call day1Walk from _call_day1Walk
+            "You shouldn't":
+                call day1NoWalk from _call_day1NoWalk
+        return
 
 label day1Walk:
 
     # Confirmation of walking with Sayori.
     $ route = 1
-    "Well, there's nothing bad that can come from walking with Sayori, I guess."
     mc "Alright, sure."
     $ sref()
     show sayori base afm laug oe om at hf11
     s "Let's go then! Ehe~"
     show sayori cm at t11
     mc "Fine, fine, just give me a second."
-    $ console_history = []
-    $ run_input(input="", output="+1 affection (Sayori)")
-    $ pause(1)
-    hide screen console_screen
+    if story_mode == False:
+        $ console_history = []
+        $ run_input(input="", output="+1 affection (Sayori)")
+        $ pause(1)
+        hide screen console_screen
 
     # The actual walk.
     scene black
@@ -360,12 +361,18 @@ label day1Walk:
     show sayori cm at t11
     "Honestly, I don't really feel like going outside."
     "I honestly wanted to play video games and enjoy myself."
-    menu:
-        "Should I go out with Sayori?"
-        "Yes":
-            call day1WalkCont from _call_day1WalkCont
-        "No":
-            call day1WalkContTwo from _call_day1WalkContTwo
+    if story_mode == True:
+        "But, might as well anyway."
+        call day1WalkCont
+    else:
+        menu:
+            "Should I go out with Sayori?"
+            "Yes":
+                $ isekai_flag = True
+                call day1WalkCont from _call_day1WalkCont
+            "No":
+                $ isekai_flag = False
+                call day1WalkContTwo from _call_day1WalkContTwo
     return
 
 label day1WalkCont:
@@ -373,10 +380,11 @@ label day1WalkCont:
     # Confirmation of going out with Sayori
     $ route = 2
     mc "Fine, but I don't see much of a reason to go out."
-    $ console_history = []
-    $ run_input(input="", output="+1 affection (Sayori)")
-    $ pause(1)
-    hide screen console_screen
+    if story_mode == False:
+        $ console_history = []
+        $ run_input(input="", output="+1 affection (Sayori)")
+        $ pause(1)
+        hide screen console_screen
 
     # Discussion with Sayori
     $ sref()
@@ -417,6 +425,12 @@ label day1WalkCont:
     show sayori at thide
     hide sayori
     "I make my way home, as the sun sets in the background."
+    if story_mode == True:
+        $ console_history = []
+        $ run_input(input="Story mode is enabled.", output="Skipping open-worlded parts.")
+        $ pause(1)
+        hide screen console_screen
+        call day1WalkEnd
     $ actions = 3
     call day1WalkEnd from _call_day1WalkEnd
     return
@@ -589,21 +603,24 @@ label day1gaming:
         with wipeleft
 
     # Open World Option menu - What to do?
-    if actions > 0:
-        menu:
-            "What should I do at home? ([actions] actions left.)"
-            "Read a book":
-                call day1Read from _call_day1Read
-            "Do my homework" if homework == 0:
-                call day1Homework from _call_day1Homework
-            "Play IdleCraft Simulator":
-                call day1IdleCraft from _call_day1IdleCraft
-            "Watch TerraAnime":
-                call day1TerraAnime from _call_day1TerraAnime
-            "Sleep":
-                call day1Sleep from _call_day1Sleep
-    else:
-        call day1Sleep from _call_day1Sleep_1
+    if story_mode == True: # Skip options if story mode is enabled.
+        call day1StoryMode
+    else: # Don't skip options.
+        if actions > 0:
+            menu:
+                "What should I do at home? ([actions] actions left.)"
+                "Read a book":
+                    call day1Read from _call_day1Read
+                "Do my homework" if homework == 0:
+                    call day1Homework from _call_day1Homework
+                "Play IdleCraft Simulator":
+                    call day1IdleCraft from _call_day1IdleCraft
+                "Watch TerraAnime":
+                    call day1TerraAnime from _call_day1TerraAnime
+                "Sleep":
+                    call day1Sleep from _call_day1Sleep
+        else:
+            call day1Sleep from _call_day1Sleep_1
     return
 
 label day1Read:
@@ -651,6 +668,7 @@ label day1IdleCraft:
 
 label day1TerraAnime:
     "I ended up watching TerraAnime alone."
+    $ isekai_flag = True
     $ actions -= 1
     $ console_history = []
     $ run_input(input="", output="Nothing changed.")
@@ -659,6 +677,22 @@ label day1TerraAnime:
     "I feel absolutely nothing different about me."
     "Honestly, I'm not sure what I'm doing with my life."
     call day1gaming from _call_day1gaming_4
+    return
+
+label day1StoryMode:
+    "I first decided to do my homework."
+    "Homework was exhausting to do, but I did it anyway."
+    "I still can't wrap my head around several questions, so I'll probably ask the teacher tomorrow."
+    "I'm now bored, so I'll probably play some games and check up on my dailies and head to bed soon."
+    scene black
+    with wipeleft
+    scene bedroom_night
+    with wipeleft
+    "Phew!"
+    "That was a nice round of gaming."
+    "I managed to log into IdleCraft and collect some dailies."
+    "I'll quickly head to sleep now, as I'm tired."
+    call day2Intro
     return
 
 label day1Sleep:
@@ -681,6 +715,6 @@ label day1Sleep:
     $ pause(0.25)
     "Continue by clicking anywhere."
     hide screen console_screen
-    window hide
+    call day2Intro
     return
     

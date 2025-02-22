@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 72: choice menuitem expects a non-empty block.
-    "No":
-         ^
+File "game/core.rpy", line 4: invalid syntax
+        global route, strength, intel, gameSkill, tardy, story_mode, satire_mode, name_mod, persistent.route, persistent.str, persistent.intel, persistent.gameSkill, persistent.tardy, persistent.story_mode, persistent.satire_mode, persistent.name
+                                                                                                       ^
+    
 
 Ren'Py Version: Ren'Py 7.5.3.22090809
-Wed Jan 29 21:09:53 2025
+Sat Feb 22 14:17:15 2025

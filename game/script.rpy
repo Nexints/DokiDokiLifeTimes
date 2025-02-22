@@ -65,11 +65,11 @@ label start:
     $ persistent.playthrough = 0
 
     # First playthrough intro!
-    if persistent.firstRun == 0:
-        $ persistent.firstRun == 1
+    if persistent.firstRunDDLT == 0:
+        $ persistent.firstRunDDLT = 1
+        $ renpy.save_persistent()
         call intro_act0 from _call_intro_act0
-    # Option to skip the intro.
-    else:
+    elif persistent.act == 0: # Option to skip the intro. Only available when Act 0 is called.
         menu:
             "Do you wish to see the Act 0 intro?"
             "Yes":
@@ -83,29 +83,28 @@ label start:
     if persistent.act == 0:
         # Prologue (Act 0)
         call prologue from _call_prologue
-        $ persistent.act = 1
+        call end_demo from _call_end_demo
     else:
         menu:
-            "Do you wish to go back to Act 0?"
+            "Do you wish to go back to Act 0 of DDLT?"
             "Yes":
-                $ persistent.act = 0
-                "Setting act to 0."
-                menu:
-                    "Do you wish to see the intro?"
-                    "Yes":
-                        call intro_act0 from _call_intro_act0
-                    "No":
-                        "Skipping intro..."
-                        call skippedIntro_act0 from _call_skippedIntro_act0
-                call prologue from _call_prologue
-                $ persistent.act = 1
+                "Setting act to 0 and resetting persistent variables."
+                $ resetGlobals()
+                "This mod will reset back to act 0 of DDLT. You will be kicked out."
+                $ renpy.quit()
             "No":
-                "There's nothing for you here."
-                "This is all the content inside the mod currently."
+                if persistent.act == 1001:
+                    "This content hasn't released yet."
+                    "Regardless, I wish you the best of luck."
+                    call isekaiIntro
+                else:
+                    "There's nothing for you here."
+                    "This is all the content inside the mod currently."
 
-    
+    # Sync persistent variables with non persistent parts.
+    $ syncActToGlobal()
+    $ renpy.quit() 
     # End Demo
-    call end_demo from _call_end_demo
 
     ## Example on calling scripts from DDLC.
     # if persistent.playthrough == 0:

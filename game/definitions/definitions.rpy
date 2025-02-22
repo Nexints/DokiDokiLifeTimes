@@ -179,8 +179,7 @@ define audio.fall = "sfx/fall.ogg"
 define audio.sfxBell = "mod_assets/sfx/school_bell_loud.flac" # Bell SFX! Modified from the original, the original is still there.
 
 # DDLT Music! Courtesy of Nexint (the mod creator)
-# This is disabled by default.
-define persistent.customMusic = False
+# All custom music is disabled by default due to questionable quality.
 define audio.menumusic = "<loop 7.385>mod_assets/music/DigiFlies.mp3" # Menu music! "Digiflies" by Nexint.
 
 ## Backgrounds
@@ -1727,15 +1726,13 @@ default persistent.str = 0 # Determines your strength.
 default persistent.intel = 0 # Determines intelligence
 default persistent.gameSkill = 0 # Determines gamer skill
 default persistent.tardy = 0 # Tardiness in class. Decreased by doing homework.
-default persistent.story_mode = False # Story mode - Skips opptions if enabled, and unlocks a different timeline.
 
-# Temp variables
-default actions = 5 # Determines how many actions you can do
-default homework = 0 # Flag if homework is done in class
-
-# Game variables
-default persistent.firstRun = 0 # Determines if the game has been started before. 0 = No, 1 = Yes.
-default persistent.act = 0 # Indicates the act.
+# Menu settings
+# Note: "Satire mode" was intended to house routes from the original DDLT in a setting. It's since been renamed to additional routes, but I was too lazy to change the name in the code.
+default persistent.satire_mode = False # Exposes additional routes in an otherwise serious mod. Note: Any mention of "satire_mode" in the code refers to additional routes. Only enabled if story_mode is disabled.
+default persistent.story_mode = False # Toggles story mode - Skips options if enabled, and unlocks a different timeline.
+default persistent.customMusic = False # Toggles the custom music in the background.
+default persistent.name = "Doki Doki LifeTimes: Act 0" # Name of the game displayed.
 
 # Non-Persistent versions of the above variables. Used during acts.
 default route = 0
@@ -1743,7 +1740,23 @@ default strength = 0
 default intel = 0
 default gameSkill = 0
 default tardy = 0
-default story_mode = 0
+default story_mode = False
+default satire_mode = False
+default name_mod = ""
+
+# Flags used in Act 0.
+default anime_watched = False
+default isekai_flag = True
+
+# Flags used in developer builds.
+
+# Temp variables
+default actions = 5 # Determines how many actions you can do
+default homework = 0 # Flag if homework is done in class
+
+# Game variables
+default persistent.firstRunDDLT = 0 # Determines if the game has been started before. 0 = No, 1 = Yes.
+default persistent.act = 0 # Indicates the act.
 
 # Name variables.
 # FeMC, Sayori, Monika, myself, and others are insided here.

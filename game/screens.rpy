@@ -598,7 +598,7 @@ screen main_menu():
     if gui.show_name:
 
         vbox:
-            text "[config.name!t]":
+            text "[persistent.name]":
                 style "main_menu_title"
 
             text "[config.version]":
@@ -1308,7 +1308,7 @@ screen ddlt_options():
         
         label _("Game")
         hbox:
-            textbutton _("Story mode") action If(persistent.story_mode, 
+            textbutton _("Story mode") action If(persistent.act == 0, If(persistent.story_mode, 
                 [ToggleField(persistent, "story_mode"), Show("dialog", 
                     message="You have disabled story mode.", 
                     ok_action=Hide("dialog")
@@ -1316,7 +1316,23 @@ screen ddlt_options():
                 [ToggleField(persistent, "story_mode"), Show("dialog", 
                     message="You have enabled story mode. All choices will be auto-completed for you.", 
                     ok_action=Hide("dialog")
-                )])
+                )]),
+                Show("dialog",
+                    message="You can't change this setting in between acts or after act 0.",
+                    ok_action=Hide("dialog")))
+
+            textbutton _("Additional routes") action If(persistent.act == 0, If(persistent.satire_mode, 
+                [ToggleField(persistent, "satire_mode"), Show("dialog", 
+                    message="You have disabled additional routes.", 
+                    ok_action=Hide("dialog")
+                )],
+                [ToggleField(persistent, "satire_mode"), Show("dialog", 
+                    message="You have enabled additional routes.\n\nThis setting references the original DDLT before the rewrite,\nand uses some of the original code + more ideas.\n\nDoesn't apply when story mode is enabled.", 
+                    ok_action=Hide("dialog")
+                )]),
+                Show("dialog",
+                    message="You can't change this setting in between acts or after act 0.",
+                    ok_action=Hide("dialog")))
         
         
         null height 10

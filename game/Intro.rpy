@@ -31,9 +31,52 @@ label skippedIntro_act0:
     play music m1
     $ console_history = []
     $ run_input(input="print(currentAct)", output="Current Act: Prologue (0).")
-    $ run_input(input="print(currentDate)", output="Date: April 8, 2011.")
+    $ run_input(input="print(currentDate)", output="Date: April 11, 2011.")
     "Continue by clicking anywhere."
     window hide
     hide screen console_screen
     $ pause(0.25)
+    return
+
+label day2Intro:
+    # Intro for day 2
+    stop music fadeout 0.5
+    scene black
+    with dissolve_scene_half
+    play music m1
+    $ console_history = []
+    $ run_input(input="print(currentAct)", output="Current Act: Prologue (0).")
+    $ run_input(input="print(currentDate)", output="Date: April 12, 2011.")
+    "Continue by clicking anywhere."
+    window hide
+    hide screen console_screen
+    $ pause(0.25)
+    call day2
+    return
+
+label isekaiIntro:
+    # Intro for Doki Doki Isekai
+
+    $ syncGlobalToAct()
+
+    stop music fadeout 0.5
+    scene black
+    with dissolve_scene_half
+    play music m1
+    $ console_history = []
+    $ run_input(input="print(currentAct)", output="Current Act: Reincarnation (Act ???).")
+    $ run_input(input="print(currentDate)", output="Date: Jan. 1, 109 Post-Creation.")
+    $ run_input(input="print(disclaimer)", output="This route is non canonical.")
+    "Continue by clicking anywhere."
+    
+    # Print Stats
+    $ console_history = []
+    $ run_input(input="print(stats)", output="Strength: [strength], Intelligence: [intel], ") # Stats printed
+    $ run_input(input="print(stats2)", output="Game Skill: [gameSkill], Tardiness: [tardy]")
+    $ run_input(input="print(stats3)", output="(Debug) Route: [route]")
+    $ pause(0.25)
+    window hide
+    hide screen console_screen
+    $ pause(0.25)
+    call isekai_start
     return
