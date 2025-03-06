@@ -18,7 +18,7 @@ Join the DDLT Discord for sneek peeks, activity history, and more. https://disco
 - Release an actual release of Act 0
 - Work on Act 1
 
-**Quirks:**
+# Quirks:
 - Tragic routes are possible, where some of the dokis die. All tragic routes are avoidable in this mod though, and there are good endings for each Doki!
 - Adding onto this: If a doki dies, the lifetime continues without them.
 - Marrying one of the dokis (and more!) is possible in the final release of this mod.
