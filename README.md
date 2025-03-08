@@ -13,12 +13,12 @@ This serves as the official Github repo for Doki Doki LifeTimes, an upcoming DDL
 
 Join the DDLT Discord for sneek peeks, activity history, and more. https://discord.gg/QCSrZvTzA7
 
-# Plans for the mod:
+## Plans for the mod:
 - Finish Act 0 (Prologue)
 - Release an actual release of Act 0
 - Work on Act 1
 
-# Quirks:
+## Quirks:
 - Tragic routes are possible, where some of the dokis die. All tragic routes are avoidable in this mod though, and there are good endings for each Doki!
 - Adding onto this: If a doki dies, the lifetime continues without them.
 - Marrying one of the dokis (and more!) is possible in the final release of this mod.
@@ -30,7 +30,7 @@ Join the DDLT Discord for sneek peeks, activity history, and more. https://disco
 - Alternate E-mail: Nexint@nexint.org
 - Contact @Nexint on Discord for any questions about this mod, issues, and feedback. I'll reply as soon as I can!
 
-# Additional notes:
+## Additional notes:
 - This mod is free forever, and (currently) open source. Only my assets in this mod are free to use, and other assets are under the authors terms.
 - I have a lack of time to work on this mod, so new releases will be heavily delayed. I still wish to hear feedback though!
 - There are multiple toggles for custom music, alternative routes, and more.
@@ -40,6 +40,6 @@ Join the DDLT Discord for sneek peeks, activity history, and more. https://disco
 - Contact me if you would like to join the development team! Currently looking for artists and writers to help with mod progression.
 - This mod will be released in seperate acts.
 
-# Credits (Additional credits in credits.txt)
+## Credits (Additional credits in credits.txt)
 - This mod was made possible with GanstaKingofSA's Doki Doki Mod Maker.
 - Ideas bounced from DDLC, other manga / anime series, other DDLC mods, and more. Notable examples: DDLC: SNAFU, DDLA, and more.
